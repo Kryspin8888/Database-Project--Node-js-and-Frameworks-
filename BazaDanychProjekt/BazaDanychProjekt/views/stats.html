@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/StyleIndex.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-default">
+            <a id="title" class="navbar-brand" href="/">TANIE JEDZENIE</a>
+            <h4 style="float:right; padding-right:100px; padding-top:14px;">NAJWIĘKSZA BAZA Z JEDZENIEM W POLSCE</h4>
+        </nav>
+        <div id="menu">
+            <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Tanie Jedzenie</a>
+                    <ul class="nav navbar-nav" style="padding-left:50px;">
+                        <li><a href="/food">Jedzenie</a></li>
+                        <li><a href="/restaurants">Lokale</a></li>
+                        <li><a href="/statistick">Statystyka</a></li>
+                    </ul>
+                </div>
+                <ul class="nav navbar-nav" style="float:right; padding-right:50px;">
+                    <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                    <li><a href="/about">O nas</a></li>
+                    <li><a href="/contact">Kontakt</a></li>
+                    <li style="padding-left:100px;"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Zaloguj się</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h2 style="text-align:center">Wybierz statystykę jaką chcesz zobaczyć</h2>
+        <div>
+            <div style="width:30%; margin: 0 auto">
+                <form method="post" action="/statistic">
+                    <select class="form-control" name="del">
+                        <option value="iloscpotraw">Ilość przypisanych potraw w każdym lokalu</option>
+                        <option value="srednia">Srednią cenę w lokalu</option>
+                        <option value="sredniaselect">Średnią cenę w lokalu sposobem podzapytań</option>
+                    </select>
+                    <label for="id">gdzie ID:</label>
+                    <input type="text" class="form-control" name="id">
+
+                    <input id="ButtonSelect" type="submit" class="btn btn-danger" value="Pokaż" style="margin-top:10px;">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

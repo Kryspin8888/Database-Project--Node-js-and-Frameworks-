@@ -25,6 +25,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const session = require('express-session');
+app.use(session({ secret: 'dH9GEf2fiRCTKsgr2bi5MTPyChpz424XLsTD' }));
+
 app.use('/', routes);
 app.use('/users', users);
 

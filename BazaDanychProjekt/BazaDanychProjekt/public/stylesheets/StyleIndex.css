@@ -1,0 +1,98 @@
+﻿body html{
+    height:100%;
+    overflow:scroll;
+}
+h1{
+    text-align:center;
+    color: #0e0078;
+}
+.backgroundimage{
+    background-image:url("image1.jpg");
+    text-align: center;
+    color:white;
+    height:250px;
+    margin:20px;
+    background-size: 100%;
+}
+.foodimage{
+    background-image:url("food.jpg");
+    text-align: center;
+    color:white;
+    height:250px;
+    width:49%;
+    float:left;
+    padding:10px;
+}
+.restaurantimage{
+    background-image:url("restaurant.jpg");
+    text-align: center;
+    color:white;
+    height:250px;
+    width:49%;
+    right: 0px;
+    float:right;
+}
+.downdiv{
+   position:relative;
+   top: 170px;
+}
+#intro{
+
+    font-weight:600;
+}
+#title{
+    font-family:Tahoma;
+    color: red;
+    font-size: 40px;
+    font-weight:900;
+    padding-left: 100px;
+    font-style:italic;
+}
+#wantcontact{
+    text-align:center; 
+    padding-top:280px;
+}
+table {
+    border-collapse: collapse;
+    width:96%;
+    margin: 0 auto;
+}
+
+td {
+    text-align: left;
+    height:100%;
+    font-weight:600;
+}
+th{
+    text-align:center;
+}
+
+tr{
+    text-indent:10px;
+}
+tr:nth-child(odd){background-color:#d9534f; color:white;}
+
+th {
+    background-color: #d9534f;
+    color: white;
+}
+#navbar{
+    width:74%;
+    height:500px;
+    float:left;
+    padding-top:20px;
+    overflow:auto;
+}
+.sticky {
+  position: fixed;
+  top: 60px;
+  width: 68%;
+}
+.sticky1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky1 + .content {
+  padding-top: 52px;
+}

@@ -30,10 +30,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="routes\Database_connection.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Content Include="package.json" />
+    <Content Include="public\stylesheets\image1.jpg" />
     <Content Include="public\stylesheets\main.css" />
+    <Content Include="public\stylesheets\StyleRegistration.css" />
+    <Content Include="public\stylesheets\StyleLogin.css" />
+    <Content Include="public\stylesheets\StyleIndex.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\stats.html" />
+    <Content Include="views\admin.html" />
+    <Content Include="views\registration.html" />
+    <Content Include="views\login.html" />
+    <Content Include="views\restaurants.html" />
+    <Content Include="views\food.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\README.md" />
     <Content Include="typings.json" />
     <Content Include="views\about.html">

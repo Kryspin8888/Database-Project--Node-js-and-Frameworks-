@@ -1,0 +1,70 @@
+create database cheap_food_database;
+ALTER DATABASE cheap_food_database DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+use cheap_food_database;
+
+create table eating_place (
+id mediumint unsigned not null auto_increment primary key,
+name varchar(30) not null,
+city varchar(20) not null,
+street_and_flat varchar (40) not null,
+cuisine varchar(30),
+date_of_addition datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+create table food (
+id mediumint unsigned not null auto_increment primary key,
+name varchar(50) not null,
+price float unsigned not null,
+amount varchar(15),
+popularity tinyint unsigned,
+rating tinyint unsigned not null,
+date_of_addition datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+create table eating_place_to_food(
+eating_place_id mediumint unsigned not null,
+food_id mediumint unsigned not null,
+index (eating_place_id, food_id),
+foreign key (eating_place_id) references eating_place(id) on update cascade on delete cascade,
+foreign key (food_id) references food(id) on update cascade on delete cascade
+);
+
+insert into eating_place(name,city,street_and_flat,cuisine,date_of_addition) 
+values ('Pychotka','Gdañsk','Grunwaldzka','W³oska',NOW());
+insert into eating_place(name,city,street_and_flat,cuisine,date_of_addition) 
+values ('Bar Karol','Gdañsk','Do Studzienki','Domowa',NOW());
+select*from eating_place;
+
+insert into food(name,price,amount,popularity,rating,date_of_addition) 
+values ('Pizza',22.5,'30 cm',0,5,now());
+insert into food(name,price,amount,popularity,rating,date_of_addition) 
+values ('Kotlet z ziemnikami',20.0,'400 g',0,6,now());
+insert into food(name,price,amount,popularity,rating,date_of_addition) 
+values ('Zupa',4.5,'200 ml',0,3,now());
+select *from food;
+
+insert into eating_place_to_food
+values (1,1);
+insert into eating_place_to_food
+values(1,2),(2,2),(2,3);
+select * from eating_place_to_food;
+
+select a.name,b.name from eating_place a , food b, eating_place_to_food c
+where a.id = c.eating_place_id and a.id = c.food_id and a.name = 'Pychotka';
+
+create table food_details(
+id mediumint unsigned not null auto_increment primary key,
+food_id mediumint unsigned not null unique,
+calories smallint unsigned,
+protein float unsigned,
+carbohydrate  float unsigned,
+fat float unsigned,
+vitamins varchar(15),
+foreign key (food_id) references food(id) on update restrict on delete restrict
+);
+
+insert into food_details (food_id,calories,protein,carbohydrate,fat,vitamins)
+values (3,99,5.7,70.1,10.9,'A,D');
+select a.name,a.price from food a right join food_details b on a.name = b.vitamins;
+select food.name, food.price ,eating_place.name from food,eating_place
+inner join eating_place on eating_place.id = food.id;
